@@ -1,16 +1,17 @@
 ﻿window.onload=function()
 {
-    document.getElementById("button").onclick=function(evt)
+    var x = 0;
+    document.getElementById("button1").onclick=function(evt)
     {
-        sayHello()
+        x=Add(x,1);
+        document.getElementById("answerfield").setAttribute("value", x);
     }
 }
 
 
-function sayHello()
+function Add(x, y)
 {
-    var messageDialog=new Windows.UI.Popups.MessageDialog("fdsfdsfdsfads!","gggggg"); 
-    messageDialog.showAsync();
+    return (x+y);
 }
 
 

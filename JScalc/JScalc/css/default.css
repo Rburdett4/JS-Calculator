@@ -1,1 +1,31 @@
-﻿
+﻿#calc-wrapper {
+    position: relative;
+    width: 200px;
+    border: 2px solid black;
+    padding: 200px 200px 200px 200px;
+    margin: auto;
+}
+
+.tester
+{
+    font-size: 30px;
+}
+
+
+input[type=text] 
+{
+    width: 150%;
+    box-shadow: 4px 0px 12px black inset;
+    font-size: 30px;
+}
+
+
+
+
+
+
+
+
+
+
+
