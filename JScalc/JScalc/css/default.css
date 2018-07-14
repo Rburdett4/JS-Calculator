@@ -1,14 +1,51 @@
-﻿#calc-wrapper {
+﻿#calc-wrapper 
+{
     position: relative;
-    width: 200px;
+    width: 300px;
     border: 2px solid black;
-    padding: 200px 200px 200px 200px;
+    padding: 200px 150px 200px 150px;
     margin: auto;
+    border-radius: 20px;
 }
 
-.tester
+#buttonelements     /*DIV CONTAINING NUMBER BUTTONS*/
 {
-    font-size: 30px;
+    border: 2px solid red;
+    position: relative;
+    right: 75px;
+    width: 300px;
+    bottom: 125px; /*this will have to be changed later, after buttons are laid out*/
+}
+ 
+.bttn   /*CLASS OF TYPE BUTTON*/
+{
+    font-size: 20px;
+    background-color: whitesmoke;
+    border: 2px solid LightGray;
+    padding: 20px; 
+    border-radius: 4px; 
+    margin-left: 30px;
+    margin-top: 30px;
+}
+
+#operatorDIV /*DIV SECTION CONTAINING OPERATORS*/
+{
+    border: 2px solid green;
+    position: relative;
+    left: 200px;
+    bottom: 420px;
+    margin-right: 100px;
+}
+ 
+.operator
+{
+    background-color: aqua;
+    font-size: 20px; 
+    border: 2px solid black;
+    padding: 20px;
+    border-radius: 4px;
+    margin-left: 30px;
+    margin-top: 30px;
 }
 
 
