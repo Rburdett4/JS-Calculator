@@ -7,51 +7,47 @@
     border-radius: 20px;
     margin: auto;
     height: 50%;
-    background-color: azure;
-}
+    background-color: #F1F1F1;
+} 
 
 #nameLabel
-{
+{ 
     position: relative;
-    border: 2px solid black;
-    float:right;
-    margin-top: 50px;
-    right:475px; 
-    bottom: 150px;
+    margin-top: 50px; 
+    left: 184px;
+    bottom: 125px;
 }
 
-#buttonelements     /*DIV CONTAINING NUMBER BUTTONS*/ 
+#buttonelements     /*DIV CONTAINING NUMBER BUTTONS*/
 {
-    border: 2px solid red;
     position: relative;
     right: 75px;
     width: 300px;
     bottom: 125px; 
 }
  
-.bttn   /*CLASS OF TYPE BUTTON*/
+.bttn   /*CLASS OF TYPE BUTTON*/ 
 {
     font-size: 20px;
     background-color: whitesmoke;
     border: 2px solid LightGray;
     padding: 20px; 
-    border-radius: 4px; 
+    border-radius: 4px;
     margin-left: 30px;
     margin-top: 30px;
 }
 
 #operatorDIV /*DIV SECTION CONTAINING OPERATORS*/
 {
-    border: 2px solid green;
     position: relative;
     left: 200px;
-    bottom: 420px;
+    bottom: 415px; 
     margin-right: 100px;
 }
  
 .operator
 {
-    background-color: aqua;
+    background-color: lightgray;
     font-size: 20px; 
     border: 2px solid black;
     padding: 20px;
@@ -69,12 +65,30 @@ input[type=text]
 }
 
 
+.bttn:hover
+{
+    background-color: lightgray;
+    color: white;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
 
+.operator:hover
+{ 
+    background-color: whitesmoke;
+    border: 2px solid lightgray; 
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
 
+.bttn:active
+{
+    background-color: lightgray;
+    transform: translateY(4px);
+}
 
+.operator:active
+{
+    background-color: whitesmoke;
+    transform: translateY(4px);
+}
 
-
-
-
-
-
+ 
