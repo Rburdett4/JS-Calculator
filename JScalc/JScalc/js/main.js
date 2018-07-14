@@ -1,5 +1,17 @@
-﻿// Your code here!
-for(var i=0;i<10; i++)
+﻿window.onload=function()
 {
-    document.write(i); 
+    document.getElementById("button").onclick=function(evt)
+    {
+        sayHello()
+    }
 }
+
+
+function sayHello()
+{
+    var messageDialog=new Windows.UI.Popups.MessageDialog("fdsfdsfdsfads!","gggggg"); 
+    messageDialog.showAsync();
+}
+
+
+

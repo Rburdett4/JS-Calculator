@@ -65,8 +65,6 @@
     <Content Include="index.html" />
     <Content Include="js\main.js" />
     <Content Include="css\default.css" />
-    <Content Include="taskbar.scale-400.png" />
-    <Content Include="taskbar.targetsize-256.png" />
     <None Include="JScalc_TemporaryKey.pfx" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\$(WMSJSProjectDirectory)\Microsoft.VisualStudio.$(WMSJSProject).targets" />
