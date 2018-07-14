@@ -1,20 +1,32 @@
-﻿#calc-wrapper 
+﻿#calc-wrapper
 {
     position: relative;
     width: 300px;
-    border: 2px solid black;
-    padding: 200px 150px 200px 150px;
-    margin: auto;
+    border: 4px solid black;
+    padding: 200px 200px 50px 150px;
     border-radius: 20px;
+    margin: auto;
+    height: 50%;
+    background-color: azure;
 }
 
-#buttonelements     /*DIV CONTAINING NUMBER BUTTONS*/
+#nameLabel
+{
+    position: relative;
+    border: 2px solid black;
+    float:right;
+    margin-top: 50px;
+    right:475px; 
+    bottom: 150px;
+}
+
+#buttonelements     /*DIV CONTAINING NUMBER BUTTONS*/ 
 {
     border: 2px solid red;
     position: relative;
     right: 75px;
     width: 300px;
-    bottom: 125px; /*this will have to be changed later, after buttons are laid out*/
+    bottom: 125px; 
 }
  
 .bttn   /*CLASS OF TYPE BUTTON*/
@@ -51,8 +63,8 @@
 
 input[type=text] 
 {
-    width: 150%;
-    box-shadow: 4px 0px 12px black inset;
+    width: 160%;
+    box-shadow: 4px 0px 12px black inset; 
     font-size: 30px;
 }
 
