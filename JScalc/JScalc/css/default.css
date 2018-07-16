@@ -6,7 +6,7 @@
     padding: 200px 200px 50px 150px;
     border-radius: 20px;
     margin: auto;
-    height: 50%;
+    height: 50%; 
     background-color: #F1F1F1;
 } 
 
@@ -14,8 +14,9 @@
 { 
     position: relative;
     margin-top: 50px; 
+    padding-bottom: 200px;
     left: 184px;
-    bottom: 125px;
+    bottom: 125px;  /*125*/ 
 }
 
 #buttonelements     /*DIV CONTAINING NUMBER BUTTONS*/

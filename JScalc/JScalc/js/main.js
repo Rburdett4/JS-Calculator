@@ -58,16 +58,66 @@
         var text=document.getElementById("answerfield").value; 
         document.getElementById("answerfield").setAttribute("value",text+"+"); 
     }
+    document.getElementById("button-").onclick=function(evt)
+    {
+        var text=document.getElementById("answerfield").value;
+        document.getElementById("answerfield").setAttribute("value",text+"-");
+    }
+    document.getElementById("button*").onclick=function(evt)
+    {
+        var text=document.getElementById("answerfield").value;
+        document.getElementById("answerfield").setAttribute("value",text+"*");
+    }
+    document.getElementById("button/").onclick=function(evt)
+    {
+        var text=document.getElementById("answerfield").value;
+        document.getElementById("answerfield").setAttribute("value",text+"/");
+    }
+    document.getElementById("buttonC").onclick=function(evt)
+    {
+        document.getElementById("answerfield").setAttribute("value","");
+        document.getElementById("welcomeLabel").innerHTML="Ryan Burdett's Calculator!";
+    }
+    document.getElementById("button=").onclick=function(evt) 
+    {
+        var input=document.getElementById("answerfield").getAttribute("value"); 
+        var inputLength=input.length;
+        if(inputLength != 3)
+        {
+            document.getElementById("welcomeLabel").innerHTML="-->Input is too long/short.";
+        }
+        else
+        {
+            document.getElementById("welcomeLabel").innerHTML="Ryan Burdett's Calculator!"; 
+            //deconstruct the 3 characters
+            var num1=parseInt(input.charAt(0)); 
+            var sign=input.charAt(1);
+            var num2=parseInt(input.charAt(2));
+            if(sign!="+"&&sign!="-"&&sign!="*"&&sign!="/")
+            {
+                document.getElementById("welcomeLabel").innerHTML="-->Invalid input form.";
+            }
+            else
+            {
+                switch(sign)
+                {
+                    case "+":
+                        document.getElementById("answerfield").setAttribute("value",Add(num1, num2));
+                        break;
+                    case "-":
+                        document.getElementById("answerfield").setAttribute("value",Subtract(num1,num2));
+                        break;
+                    case "*":
+                        document.getElementById("answerfield").setAttribute("value",Multiply(num1,num2));
+                        break;
+                    case "/":
+                        document.getElementById("answerfield").setAttribute("value",Divide(num1,num2)); 
+                        break;
+                }
+            }
+        }
+    }
 } 
-
-
-
-
-
-
-
-
-
 
 
 
@@ -90,14 +140,15 @@ function Multiply(x,y)
 
 function Divide(x,y)
 {
-    return (x/y);
-}
-
-function Equals(x,y)
-{
-    //evaluate what's in the field and set to a varaible
-    //scrub text field
-    //display variable 
+    if(y != 0)
+    {
+        return (x/y);
+    }
+    else
+    {
+        document.getElementById("welcomeLabel").innerHTML="Cannot divide by 0.";
+        return;
+    }
 }
 
 
