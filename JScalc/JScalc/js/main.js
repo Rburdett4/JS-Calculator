@@ -39,7 +39,7 @@
     document.getElementById("button7").onclick=function(evt)
     {
         var temp=document.getElementById("answerfield").value
-        document.getElementById("answerfield").setAttribute("value",temp+"7");
+        document.getElementById("answerfield").setAttribute("value",temp+"7"); 
     }
     document.getElementById("button8").onclick=function(evt)
     {
@@ -50,6 +50,11 @@
     {
         var temp=document.getElementById("answerfield").value
         document.getElementById("answerfield").setAttribute("value",temp+"9");
+    } 
+    document.getElementById("button0").onclick=function(evt) 
+    {
+        var temp=document.getElementById("answerfield").value
+        document.getElementById("answerfield").setAttribute("value",temp+"0");
     } 
 
     //Now, we can establish the operators.
@@ -68,7 +73,7 @@
         var text=document.getElementById("answerfield").value;
         document.getElementById("answerfield").setAttribute("value",text+"*");
     }
-    document.getElementById("button/").onclick=function(evt)
+    document.getElementById("buttondivide").onclick=function(evt)
     {
         var text=document.getElementById("answerfield").value;
         document.getElementById("answerfield").setAttribute("value",text+"/");
@@ -78,7 +83,7 @@
         document.getElementById("answerfield").setAttribute("value","");
         document.getElementById("welcomeLabel").innerHTML="Ryan Burdett's Calculator!";
     }
-    document.getElementById("button=").onclick=function(evt) 
+    document.getElementById("buttoneq").onclick=function(evt) 
     {
         var input=document.getElementById("answerfield").getAttribute("value"); 
         var inputLength=input.length;
@@ -146,7 +151,7 @@ function Divide(x,y)
     }
     else
     {
-        document.getElementById("welcomeLabel").innerHTML="Cannot divide by 0.";
+        document.getElementById("welcomeLabel").innerHTML="......Nice try!";
         return;
     }
 }
