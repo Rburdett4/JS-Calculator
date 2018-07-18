@@ -1,6 +1,5 @@
 ﻿window.onload=function()
 {
-
     //Most Likely will have to check that only one operator is present. 
     //This could be done here,or potentially when the data is sent to be evaluated. 
 
@@ -85,48 +84,79 @@
     }
     document.getElementById("buttoneq").onclick=function(evt) 
     {
-        var input=document.getElementById("answerfield").getAttribute("value"); 
-        var inputLength=input.length;
-        if(inputLength != 3)
+        var input=document.getElementById("answerfield").getAttribute("value");
+        var inputlength=input.length;
+        document.getElementById("welcomeLabel").innerHTML="Ryan Burdett's Calculator!"; 
+        var opcount=0;
+        for(var i=0;i<inputlength;i++)      //validate proper form- only wish to support single operations 
+                                            //at this time.Could revisit in the future.
         {
-            document.getElementById("welcomeLabel").innerHTML="-->Input is too long/short.";
-        }
-        else
-        {
-            document.getElementById("welcomeLabel").innerHTML="Ryan Burdett's Calculator!"; 
-            //deconstruct the 3 characters
-            var num1=parseInt(input.charAt(0)); 
-            var sign=input.charAt(1);
-            var num2=parseInt(input.charAt(2));
-            if(sign!="+"&&sign!="-"&&sign!="*"&&sign!="/")
+            if(input.charAt(i)=="+"||input.charAt(i)=="-"||input.charAt(i)=="*"||input.charAt(i)==  "/")
             {
-                document.getElementById("welcomeLabel").innerHTML="-->Invalid input form.";
-            }
-            else
-            {
-                switch(sign)
+                opcount++;
+                if(opcount > 1)
                 {
-                    case "+":
-                        document.getElementById("answerfield").setAttribute("value",Add(num1, num2));
-                        break;
-                    case "-":
-                        document.getElementById("answerfield").setAttribute("value",Subtract(num1,num2));
-                        break;
-                    case "*":
-                        document.getElementById("answerfield").setAttribute("value",Multiply(num1,num2));
-                        break;
-                    case "/":
-                        document.getElementById("answerfield").setAttribute("value",Divide(num1,num2)); 
-                        break;
+                    document.getElementById("welcomeLabel").innerHTML="-->Invalid input form.";
+                    return;
                 }
             }
         }
+
+        for(var i=0;i<inputlength;i++)
+        {
+            switch(input.charAt(i))
+            {
+                case "+":
+                    //get num1 and num2
+                    var num1=parseInt(input.substring(0,i)); 
+                    var num2=parseInt(input.substring(i+1,inputlength+1));
+                    if(isNaN(num1) || isNaN(num2))
+                    {
+                        document.getElementById("welcomeLabel").innerHTML="-->Invalid input form.";
+                        break;
+                    }
+                    document.getElementById("answerfield").setAttribute("value",Add(num1,num2));
+                    break;
+                case "-":
+                    var num1=parseInt(input.substring(0,i));
+                    var num2=parseInt(input.substring(i+1,inputlength+1));
+                    if(isNaN(num1)||isNaN(num2))
+                    {
+                        document.getElementById("welcomeLabel").innerHTML="-->Invalid input form.";
+                        break;
+                    }
+                    document.getElementById("answerfield").setAttribute("value",Subtract(num1,num2));
+                    break;
+                case "*":
+                    var num1=parseInt(input.substring(0,i));
+                    var num2=parseInt(input.substring(i+1,inputlength+1));
+                    if(isNaN(num1)||isNaN(num2))
+                    {
+                        document.getElementById("welcomeLabel").innerHTML="-->Invalid input form.";
+                        break;
+                    }
+                    document.getElementById("answerfield").setAttribute("value",Multiply(num1,num2)); 
+                    break;
+                case "/":
+                    var num1=parseInt(input.substring(0,i));
+                    var num2=parseInt(input.substring(i+1,inputlength+1));
+                    if(isNaN(num1)||isNaN(num2))
+                    {
+                        document.getElementById("welcomeLabel").innerHTML="-->Invalid input form.";
+                        break;
+                    } 
+                    document.getElementById("answerfield").setAttribute("value",Divide(num1,num2));
+                    if(isNaN(document.getElementById("answerfield").getAttribute("value")))
+                    {
+                        document.getElementById("answerfield").setAttribute("value", "Not a Number!"); 
+                    }
+                    break;
+                default:
+                    break;
+            }
+        } 
     }
 } 
-
-
-
-
 
 function Add(x, y)
 {
@@ -147,7 +177,7 @@ function Divide(x,y)
 {
     if(y != 0)
     {
-        return (x/y);
+        return (x/y); 
     }
     else
     {
